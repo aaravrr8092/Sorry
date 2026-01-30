@@ -157,8 +157,10 @@
 
     // Popup
     function showPopup() {
-        document.getElementById("popup").style.display = "flex";
-    }
+    const song = document.getElementById("bgSong");
+    song.play().catch(() => {});
+    document.getElementById("popup").style.display = "flex";
+}
 </script>
 
 <div class="container">
@@ -193,9 +195,9 @@
     <button onclick="showPopup()">Please Forgive Me 🤍</button>
 
     <!-- Song -->
-    <audio controls autoplay loop>
-        <source src="song.mp3" type="audio/mpeg">
-    </audio>
+    <audio id="bgSong" loop>
+    <source src="song.mp3" type="audio/mpeg">
+</audio>
 </div>
 
 <!-- Popup -->
